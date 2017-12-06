@@ -1,0 +1,24 @@
+server:  
+  port: 8765
+    
+
+zuul:
+  routes:
+    users:
+      path: /users-service/**
+      serviceId: users-service
+    stats:
+      path: /stats-service/**
+      serviceId: stats-service
+    notify:
+      path: /notify-service/**
+      serviceId: notify-service
+    react:
+      path: /**
+      serviceId: react-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: true
