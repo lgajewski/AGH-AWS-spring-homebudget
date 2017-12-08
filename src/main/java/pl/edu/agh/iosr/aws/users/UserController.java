@@ -23,7 +23,7 @@ class UserController {
 
     @RequestMapping(value = "/")
     public String index() {
-        return "Hello, this is uers microservice";
+        return "Hello, this is users microservice";
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
