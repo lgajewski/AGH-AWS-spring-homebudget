@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.inject.Inject;
 
 
-@RestController
+@RestController("/users")
 class UserController {
 
     @Value("#{environment['SERVICE_ENDPOINT'] ?: 'localhost:8080'}")
