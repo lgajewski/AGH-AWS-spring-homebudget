@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity {
+public class User extends pl.edu.agh.iosr.aws.stats.model.BaseEntity {
 
     @Column(name = "username")
     private String username;
