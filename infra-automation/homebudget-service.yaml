@@ -22,7 +22,7 @@ Parameters:
     Type: String
   DBUsername:
     Type: String
-    Default: "PetDBAdmin"
+    Default: "HomeDBAdmin"
   DBPasswordSSMKey:
     Type: String
   SsmKMSKeyArn:
@@ -77,7 +77,7 @@ Resources:
                 Action:
                   - kms:Decrypt
 
-####spring-petclinic
+####spring-homebudget
   Service:
     Type: AWS::ECS::Service
     Properties:

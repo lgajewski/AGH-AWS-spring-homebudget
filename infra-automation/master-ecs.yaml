@@ -61,7 +61,7 @@ Resources:
                 EcsInstanceType: "t2.medium"
                 AsgMaxSize: 2
                 DBPassword: !Ref DBPassword
-                DBUsername: "PetDBAdmin"
+                DBUsername: "HomeDBAdmin"
                 EnvironmentName: !Ref AWS::StackName
                 KeyName: !Ref KeyPair
             

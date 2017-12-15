@@ -84,11 +84,11 @@ Outputs:
       # - ''
       # - - jdbc:mysql://
       #   - Fn::GetAtt:
-      #     - PetClinicDB
+      #     - HomeBudgetDB
       #     - Endpoint.Address
       #   - ':'
       #   - Fn::GetAtt:
-      #     - PetClinicDB
+      #     - HomeBudgetDB
       #     - Endpoint.Port
       #   - /
   DBUsername:
@@ -465,7 +465,7 @@ Resources:
   
   SSMDataSourceURL:
     Type: "AWS::SSM::Parameter"
-    DependsOn: PetClinicDB
+    DependsOn: HomeBudgetDB
     Properties: 
       Name: "/DeploymentConfig/Prod/DataSourceURL"
       Description: MySQL Datasource URL
@@ -475,30 +475,30 @@ Resources:
         - ''
         - - jdbc:mysql://
           - Fn::GetAtt:
-            - PetClinicDB
+            - HomeBudgetDB
             - Endpoint.Address
           - ':'
           - Fn::GetAtt:
-            - PetClinicDB
+            - HomeBudgetDB
             - Endpoint.Port
           - /
-          - 'PetClinicDB'
+          - 'HomeBudgetDB'
   SSMDBUsername:
     Type: "AWS::SSM::Parameter"
-    DependsOn: PetClinicDB
+    DependsOn: HomeBudgetDB
     Properties: 
       Name: "/DeploymentConfig/Prod/DBUsername"
       Description: MySQL DB Username
       Type: String
       Value: !Ref DBUsername
 
-  PetClinicDB:
+  HomeBudgetDB:
     Properties:
       AllocatedStorage: '5'
       DBInstanceClass: db.t2.medium
-      DBName: PetClinicDB
+      DBName: HomeBudgetDB
       DBSubnetGroupName:
-        Ref: PetClinicSubnetGroup
+        Ref: HomeBudgetSubnetGroup
       Engine: MySQL
       MasterUserPassword:
         Ref: DBPassword
@@ -509,7 +509,7 @@ Resources:
         - DBSecurityGroup
         - GroupId
     Type: AWS::RDS::DBInstance
-  PetClinicSubnetGroup:
+  HomeBudgetSubnetGroup:
     Properties:
       DBSubnetGroupDescription: Subnets available for the RDS DB Instance
       SubnetIds:
