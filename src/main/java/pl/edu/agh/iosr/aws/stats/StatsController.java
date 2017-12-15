@@ -14,12 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/stats")
 class StatsController {
 
-    @Value("#{environment['SERVICE_ENDPOINT'] ?: 'localhost:8080'}")
-    private String serviceEndpoint;
-
-
-    private static final Logger logger = LoggerFactory.getLogger(StatsController.class);
-
     @RequestMapping("/")
     public String home() {
         return "Hello. This is stats service";
