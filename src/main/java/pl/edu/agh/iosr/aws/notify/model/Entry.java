@@ -1,7 +1,4 @@
-/*
- * Copyright © 2017 and Confidential to Pegasystems Inc. All rights reserved.
- */
-package pl.edu.agh.iosr.aws.web.model;
+package pl.edu.agh.iosr.aws.notify.model;
 
 
 import javax.persistence.*;
