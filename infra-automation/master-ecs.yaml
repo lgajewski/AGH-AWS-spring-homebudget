@@ -82,31 +82,9 @@ Resources:
                 ElbSecurityGroup: !GetAtt ECSCluster.Outputs.ElbSecurityGroup
 
     # 3 pipelines for
-    # spring-homebudget-rest-react
     # spring-homebudget-rest-stats
     # spring-homebudget-rest-users
-    CodePipelineReact:
-        Type: AWS::CloudFormation::Stack
-        Properties:
-            # TemplateURL: !Sub https://s3-${AWS::Region}.amazonaws.com/${InfraAutomationCfnBucket}/deployment-pipeline-codecommit.yaml
-            TemplateURL:
-              Fn::If: 
-              - IsUSEast1
-              - !Sub "https://s3.amazonaws.com/${InfraAutomationCfnBucket}/deployment-pipeline-codecommit.yaml"
-              - !Sub "https://s3-${AWS::Region}.amazonaws.com/${InfraAutomationCfnBucket}/deployment-pipeline-codecommit.yaml"
-            Parameters:
-                EnvironmentName: !Ref AWS::StackName
-                CodeCommitRepo: "spring-homebudget-rest-react"
-                MicroServiceName: "react"
-                CodeBuildContainerSpringBootDocker: !Ref CodeBuildContainerSpringBootDocker
-                VpcId: !GetAtt ECSCluster.Outputs.VpcId
-                ALBListener: !GetAtt ALB.Outputs.ALBListener
-                ECSCluster: !GetAtt ECSCluster.Outputs.ECSCluster
-                CfnTemplateBucket: !Ref InfraAutomationCfnBucket
-                JDBCConnectionString: !GetAtt ECSCluster.Outputs.JDBCConnectionString
-                DBUsername: !GetAtt ECSCluster.Outputs.DBUsername
-                SsmKMSKeyArn: !Ref SsmKMSKeyArn
-
+    # spring-homebudget-rest-react
     CodePipelineStats:
         Type: AWS::CloudFormation::Stack
         Properties:
@@ -150,3 +128,26 @@ Resources:
                 JDBCConnectionString: !GetAtt ECSCluster.Outputs.JDBCConnectionString
                 DBUsername: !GetAtt ECSCluster.Outputs.DBUsername
                 SsmKMSKeyArn: !Ref SsmKMSKeyArn
+
+    CodePipelineReact:
+        Type: AWS::CloudFormation::Stack
+        Properties:
+            # TemplateURL: !Sub https://s3-${AWS::Region}.amazonaws.com/${InfraAutomationCfnBucket}/deployment-pipeline-codecommit.yaml
+            TemplateURL:
+              Fn::If:
+              - IsUSEast1
+              - !Sub "https://s3.amazonaws.com/${InfraAutomationCfnBucket}/deployment-pipeline-codecommit.yaml"
+              - !Sub "https://s3-${AWS::Region}.amazonaws.com/${InfraAutomationCfnBucket}/deployment-pipeline-codecommit.yaml"
+            Parameters:
+                EnvironmentName: !Ref AWS::StackName
+                CodeCommitRepo: "spring-homebudget-rest-react"
+                MicroServiceName: "react"
+                CodeBuildContainerSpringBootDocker: !Ref CodeBuildContainerSpringBootDocker
+                VpcId: !GetAtt ECSCluster.Outputs.VpcId
+                ALBListener: !GetAtt ALB.Outputs.ALBListener
+                ECSCluster: !GetAtt ECSCluster.Outputs.ECSCluster
+                CfnTemplateBucket: !Ref InfraAutomationCfnBucket
+                JDBCConnectionString: !GetAtt ECSCluster.Outputs.JDBCConnectionString
+                DBUsername: !GetAtt ECSCluster.Outputs.DBUsername
+                SsmKMSKeyArn: !Ref SsmKMSKeyArn
+
