@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@RequestMapping(value = "/stats")
 class StatsController {
 
     @Value("#{environment['SERVICE_ENDPOINT'] ?: 'localhost:8080'}")
