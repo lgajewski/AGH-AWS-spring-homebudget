@@ -16,11 +16,6 @@ public class BaseEntity implements Serializable {
         return id;
     }
 
-    // expose id for other calls
-    public Integer getUserId() {
-        return id;
-    }
-
     public void setId(Integer id) {
         this.id = id;
     }

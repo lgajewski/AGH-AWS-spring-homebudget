@@ -15,6 +15,14 @@ public class User extends BaseEntity {
     private String imgUrl;
 
 
+    public User() {
+
+    }
+
+    public User(String username) {
+        this.username = username;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -29,6 +37,11 @@ public class User extends BaseEntity {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    // expose id for other calls
+    public Integer getUserId() {
+        return super.getId();
     }
 
 }
