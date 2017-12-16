@@ -1,11 +1,10 @@
 package pl.edu.agh.iosr.aws.users.model;
 
-import java.io.Serializable;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 @MappedSuperclass
 public class BaseEntity implements Serializable {
@@ -17,12 +16,13 @@ public class BaseEntity implements Serializable {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    // expose id for other calls
+    public Integer getUserId() {
+        return id;
     }
 
-    public boolean isNew() {
-        return this.id == null;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
