@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/notify")
 class NotificationsController {
 
     private static final Logger logger = LoggerFactory.getLogger(pl.edu.agh.iosr.aws.notify.NotificationsController.class);
@@ -18,15 +19,15 @@ class NotificationsController {
     @Value("#{environment['SERVICE_ENDPOINT'] ?: 'localhost:8081'}")
     private String statsEndpoint;
 
-//    @RequestMapping("/web/service/user/ip")
-//    public String user() {
-//        return userEndpoint;
-//    }
-//
-//    @RequestMapping("/web/service/stats/ip")
-//    public String stats() {
-//        return statsEndpoint;
-//    }
+    @RequestMapping("/web/service/user/ip")
+    public String user() {
+        return userEndpoint;
+    }
+
+    @RequestMapping("/web/service/stats/ip")
+    public String stats() {
+        return statsEndpoint;
+    }
 
 
     @RequestMapping("/")
