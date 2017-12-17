@@ -24,7 +24,6 @@ class UserController {
         return "Hello. This is users service: /users-service";
     }
 
-
     @RequestMapping("/users-service/test/abc")
     public String test() {
         return "Hello. This is test/abc";
