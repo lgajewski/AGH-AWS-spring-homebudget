@@ -44,4 +44,10 @@ public class User extends BaseEntity {
         return super.getId();
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                '}';
+    }
 }
