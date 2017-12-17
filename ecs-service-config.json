@@ -1,5 +1,5 @@
 {
-    "count": "2",
+    "count": "1",
     "memory": "512",
     "port": "8084",
     "path": "/users-service/*",
