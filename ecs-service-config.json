@@ -2,6 +2,6 @@
     "count": "2",
     "memory": "512",
     "port": "8081",
-    "path": "/notify/*",
+    "path": "/notify-service/*",
     "priority": "2"
 }
