@@ -1,0 +1,12 @@
+[submodule "spring-homebudget-rest-notify"]
+	path = spring-homebudget-rest-notify
+	url = ./spring-homebudget-rest-notify
+[submodule "spring-homebudget-rest-react"]
+	path = spring-homebudget-rest-react
+	url = ./spring-homebudget-rest-react
+[submodule "spring-homebudget-rest-stats"]
+	path = spring-homebudget-rest-stats
+	url = ./spring-homebudget-rest-stats
+[submodule "spring-homebudget-rest-users"]
+	path = spring-homebudget-rest-users
+	url = ./spring-homebudget-rest-users
