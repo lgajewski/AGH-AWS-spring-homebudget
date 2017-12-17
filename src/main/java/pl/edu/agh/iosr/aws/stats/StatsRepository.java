@@ -16,6 +16,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "entries", path = "entries")
 public interface StatsRepository extends CrudRepository<Entry, Integer> {
 
-    List<Entry> findByUser_Id(@Param("userId") Integer id);
+    List<Entry> findByUserId(@Param("userid") Integer id);
 
 }

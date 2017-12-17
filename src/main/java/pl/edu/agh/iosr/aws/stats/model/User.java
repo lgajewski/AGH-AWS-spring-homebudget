@@ -1,8 +1,6 @@
-/*
- * Copyright © 2017 and Confidential to Pegasystems Inc. All rights reserved.
- */
-
 package pl.edu.agh.iosr.aws.stats.model;
+
+import pl.edu.agh.iosr.aws.stats.model.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,9 +16,14 @@ public class User extends BaseEntity {
     @Column(name = "img_url")
     private String imgUrl;
 
-//    @Column(name = "date")
-//    private Date date;
 
+    public User() {
+
+    }
+
+    public User(String username) {
+        this.username = username;
+    }
 
     public String getUsername() {
         return username;
@@ -38,11 +41,9 @@ public class User extends BaseEntity {
         this.imgUrl = imgUrl;
     }
 
-//    public Date getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(Date date) {
-//        this.date = date;
-//    }
+    // expose id for other calls
+    public Integer getUserId() {
+        return super.getId();
+    }
+
 }

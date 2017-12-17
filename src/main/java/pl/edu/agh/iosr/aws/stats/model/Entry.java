@@ -5,16 +5,20 @@
 package pl.edu.agh.iosr.aws.stats.model;
 
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.sql.Date;
 
 @Entity
 @Table(name = "entries")
 public class Entry extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_id")
+
+    @Column(name = "user_id")
+    private Integer userId;
 
     @Column(name = "type")
     private String type;
@@ -52,12 +56,12 @@ public class Entry extends BaseEntity {
         this.value = value;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getDate() {

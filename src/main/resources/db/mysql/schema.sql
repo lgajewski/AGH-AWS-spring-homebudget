@@ -18,10 +18,9 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS entries (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  user_id INT(4) UNSIGNED NOT NULL,
+  user_id INT(4) UNSIGNED,
   type VARCHAR(30),
   description VARCHAR(256),
   value DECIMAL,
-  date DATE,
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  date DATE
 ) engine=InnoDB;

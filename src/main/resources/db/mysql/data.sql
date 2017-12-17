@@ -12,7 +12,7 @@ INSERT IGNORE INTO entries VALUES(4, 3, 'expense', 'Rachunek za gaz',      654.2
 INSERT IGNORE INTO entries VALUES(5, 1, 'expense', 'Rachunek za prad',     120.52,    '2017-07-04')
 INSERT IGNORE INTO entries VALUES(6, 2, 'expense', 'Rachunek za wode',     420.2,     '2017-07-02')
 INSERT IGNORE INTO entries VALUES(7, 2, 'expense', 'Rachunek za smieci',   68,        '2017-07-12')
-INSERT IGNORE INTO entries VALUES(8, 3, 'expense', 'Rachunek za gaz',      254.21,    '2017-07-16')
+INSERT IGNORE INTO entries VALUES(8, 4, 'expense', 'Rachunek za gaz',      254.21,    '2017-07-16')
 
 INSERT IGNORE INTO entries VALUES(9, 1,  'payment', 'Zwrot, pierwsza rata', 40,       '2017-06-18')
 INSERT IGNORE INTO entries VALUES(10, 2, 'payment', 'Zwrot, pierwsza rata', 60,       '2017-06-20')
