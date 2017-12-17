@@ -1,6 +1,6 @@
 {
     "count": "1",
-    "memory": "512",
+    "memory": "1024",
     "port": "8084",
     "path": "/users-service/*",
     "priority": "10"
