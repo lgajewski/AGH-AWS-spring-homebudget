@@ -71,4 +71,15 @@ public class Entry extends BaseEntity {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "userId=" + userId +
+                ", type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                ", value=" + value +
+                ", date=" + date +
+                '}';
+    }
 }
