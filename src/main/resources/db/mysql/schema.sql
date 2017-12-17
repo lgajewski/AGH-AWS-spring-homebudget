@@ -9,6 +9,13 @@ GRANT ALL PRIVILEGES ON homebudget.* TO root@localhost IDENTIFIED BY 'root';
 USE homebudget;
 
 
+CREATE TABLE IF NOT EXISTS users (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(30),
+  img_url VARCHAR(256),
+  INDEX(username)
+) engine=InnoDB;
+
 CREATE TABLE IF NOT EXISTS entries (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   user_id INT(4) UNSIGNED NOT NULL,
