@@ -10,7 +10,7 @@ import pl.edu.agh.iosr.aws.notify.model.User;
  * conventions so this interface can easily be extended for Spring Data See here: http://static.springsource.org/spring-data/jpa/docs/current/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
  */
 @CrossOrigin(origins = "*")
-@RepositoryRestResource(collectionResourceRel = "users", path = "notifications")
+@RepositoryRestResource(collectionResourceRel = "users", path = "notify")
 public interface UserRepository extends CrudRepository<User, Integer> {
 
 /*
