@@ -17,13 +17,11 @@ public class UserApplication {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-
     @PostConstruct
     public void post() {
         logger.info("Trying to list users..");
         logger.info("Users: " + userRepository.findAll());
     }
-
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(UserApplication.class, args);
