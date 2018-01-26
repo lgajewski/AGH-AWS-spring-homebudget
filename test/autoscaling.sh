@@ -1,6 +1,6 @@
 #!/bin/sh
 
-URL=${1:-"http://homebudget-cicd-alb-1191825867.eu-west-1.elb.amazonaws.com/"}
+URL=${1:-"http://homebudget-cicd-alb-1924033504.eu-west-1.elb.amazonaws.com/"}
 INTERVAL=${2:-5}
 
 while true; do
