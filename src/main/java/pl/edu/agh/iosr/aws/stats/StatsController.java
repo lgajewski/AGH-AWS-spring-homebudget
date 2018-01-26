@@ -29,27 +29,27 @@ class StatsController {
         return "Hello. This is stats service: /stats-service";
     }
 
-    @RequestMapping("/http/{statusCode}")
+    @RequestMapping("/stats-service/http/{statusCode}")
     public ResponseEntity<String> http(@PathVariable("statusCode") String statusCodeParam) {
         int statusCode = Integer.valueOf(statusCodeParam);
         return new ResponseEntity<>("Responding with: " + statusCode, HttpStatus.valueOf(statusCode));
     }
 
-    @RequestMapping(path = "/log/warn", method = RequestMethod.POST)
+    @RequestMapping(path = "/stats-service/log/warn", method = RequestMethod.POST)
     public ResponseEntity<String> logWarn() {
         String logLevel = "warn";
         logger.warn("Example log message with " + logLevel + " level.");
         return ResponseEntity.ok("Logged into application with log level: " + logLevel);
     }
 
-    @RequestMapping(path = "/log/info", method = RequestMethod.POST)
+    @RequestMapping(path = "/stats-service/log/info", method = RequestMethod.POST)
     public ResponseEntity<String> logInfo() {
         String logLevel = "info";
         logger.info("Example log message with " + logLevel + " level.");
         return ResponseEntity.ok("Logged into application with log level: " + logLevel);
     }
 
-    @RequestMapping(path = "/log/error", method = RequestMethod.POST)
+    @RequestMapping(path = "/stats-service/log/error", method = RequestMethod.POST)
     public ResponseEntity<String> logError() {
         String logLevel = "error";
         logger.error("Example log message with " + logLevel + " level.");
