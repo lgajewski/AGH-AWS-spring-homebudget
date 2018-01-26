@@ -32,6 +32,7 @@ class StatsController {
     @RequestMapping("/stats-service/http/{statusCode}")
     public ResponseEntity<String> http(@PathVariable("statusCode") String statusCodeParam) {
         int statusCode = Integer.valueOf(statusCodeParam);
+        logger.info("Received HTTP request, responding with: " + statusCode);
         return new ResponseEntity<>("Responding with: " + statusCode, HttpStatus.valueOf(statusCode));
     }
 
