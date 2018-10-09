@@ -1,0 +1,7 @@
+{
+    "count": "2",
+    "memory": "1024",
+    "port": "8083",
+    "path": "/stats-service/*",
+    "priority": "15"
+}
